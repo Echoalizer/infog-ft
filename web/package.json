@@ -1,0 +1,20 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "front for python app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:echoalizer/infog-ft.git"
+  },
+  "author": "Echoalizer",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^41.2.2",
+    "react": "^19.2.5"
+  }
+}

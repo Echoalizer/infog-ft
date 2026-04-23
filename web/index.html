@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+            http-equiv="X-Content-Security-Policy"
+            content="default-src 'self'; script-src 'self'"
+    />
+    <title>App report gen. infog-tg</title>
+    <!--    <style> * {-->
+    <!--        font-family: Avenir, sans-serif-->
+    <!--    } </style>-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<section id="left-controls">
+
+    <div id="left-title">
+        <h2>Generación de informes</h2>
+    </div>
+
+    <div>
+        <label for="search-box">Buscar datos</label>
+        <div class="text-input">
+            <textarea id="search-box" placeholder="dogs and cats"></textarea>
+            <button id="search-btn" class="btn">Buscar</button>
+        </div>
+    </div>
+
+    <div>
+        <label for="extract-box">Extraer de un sitio web</label>
+        <div class="text-input">
+            <textarea id="extract-box" placeholder="https://www.site.com"></textarea>
+            <button id="extract-btn" class="btn">Extraer</button>
+        </div>
+    </div>
+
+    <div>
+        <label for="upload-box">Subir un archivo</label>
+        <div class="text-input">
+            <textarea id="upload-box" placeholder="dogs and cats"></textarea>
+            <button id="upload-btn" class="btn">Abrir</button>
+        </div>
+
+    </div>
+
+    <div>
+        <list id="resources">
+        </list>
+    </div>
+
+    <div>
+        <button id="generate-btn">Generar</button>
+    </div>
+
+
+</section>
+
+<main id="main-frame">
+
+    <h2>Titulo</h2> <!-- To be modified -->
+    <!-- readonly screen, left justified and filling rest of frame -->
+    <div id="preview">
+
+    </div>
+
+    <div id="chat" class="sticky">
+        <p>You will be able to chat here!</p>
+    </div>
+
+</main>
+
+
+</body>
+
+</html>

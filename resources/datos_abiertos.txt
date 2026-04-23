@@ -1,0 +1,6 @@
+## INE
+https://www.ine.es/dyngs/INEbase/listaoperaciones.htm
+https://www.ine.es/OpenAPI/index.html#/
+
+## IGN
+https://centrodedescargas.cnig.es/CentroDescargas/home

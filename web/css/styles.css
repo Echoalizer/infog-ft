@@ -1,0 +1,55 @@
+* {
+    font-family: 'Avenir', 'Helvetica', 'Verdana', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.text-input {
+    margin-top: 0.7em;
+    flex-direction: column;
+    width: 100%;
+}
+
+#left-controls #main-frame {
+    display: flex;
+    flex-direction: column;
+    padding: 10vh 10vw;
+    height: stretch;
+    background-color: #333333;
+}
+
+#left-controls {
+    flex: 1;
+}
+
+#main-frame {
+    flex: 3;
+}
+
+textarea {
+    resize: none;
+    height: 1.2em;
+}
+
+#generate-btn {
+    width: 100%;
+    position: relative;  /* is this the best way? */
+    bottom: 0;
+}
+
+.btn {
+    position: relative;
+    right: 0;
+}
+
+.sticky {
+    bottom: 0;
+}
+
+#preview {
+    background: dimgray;
+}

@@ -1,0 +1,11 @@
+FROM gemma3
+
+# system message specifies the behavior of the model
+SYSTEM """
+
+Estas generando un informe
+
+
+Por ultimo, incluye un parrafo de conclusion explicando las predicciones mas probables
+
+"""
