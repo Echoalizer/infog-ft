@@ -7,9 +7,10 @@ const createWindow = () => {
     })
 
     win.setMinimumSize(1020, 460)
-
     win.setBackgroundColor("#d7d7d7")
-    win.loadFile('index.html')
+
+    // void evaluates the promise's undefined return value
+    void win.loadFile('index.html')
 }
 
 app.whenReady().then(() => {
