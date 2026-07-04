@@ -11,7 +11,12 @@ const createWindow = () => {
 
     // void evaluates the promise's undefined return value
     void win.loadFile('index.html')
+
+    const domNode = document.getElementById('root');
+    // const root = createRoot(domNode);
+    // root.render(<App />);
 }
+
 
 app.whenReady().then(() => {
     createWindow()

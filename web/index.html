@@ -17,62 +17,64 @@
 </head>
 
 <body>
-<section id="left-controls">
+<div id="root">
+    <section id="left-controls">
 
-    <h2 class="title">Generación de informes</h2>
+        <h2 class="title">Generación de informes</h2>
 
-    <div class="row">
-        <label for="upload-box">Subir un archivo</label>
-        <div class="text-input">
-            <textarea id="upload-box" placeholder="values.csv"></textarea>
-            <button id="upload-btn" class="btn">Abrir</button>
+        <div class="row">
+            <label for="upload-box">Subir un archivo</label>
+            <div class="text-input">
+                <textarea id="upload-box" placeholder="values.csv"></textarea>
+                <button id="upload-btn" class="btn">Abrir</button>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <label for="search-box">Buscar datos</label>
-        <div class="text-input">
-            <textarea id="search-box" placeholder="dogs and cats"></textarea>
-            <button id="search-btn" class="btn">Buscar</button>
+        <div class="row">
+            <label for="search-box">Buscar datos</label>
+            <div class="text-input">
+                <textarea id="search-box" placeholder="dogs and cats"></textarea>
+                <button id="search-btn" class="btn">Buscar</button>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <label for="extract-box">Extraer de un sitio web</label>
-        <div class="text-input">
-            <textarea id="extract-box" placeholder="https://www.site.com"></textarea>
-            <button id="extract-btn" class="btn">Extraer</button>
+        <div class="row">
+            <label for="extract-box">Extraer de un sitio web</label>
+            <div class="text-input">
+                <textarea id="extract-box" placeholder="https://www.site.com"></textarea>
+                <button id="extract-btn" class="btn">Extraer</button>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <list id="resources">
-        </list>
-    </div>
+        <div class="row">
+            <list id="resources">
+            </list>
+        </div>
 
-    <div class="filler"></div>
+        <div class="filler"></div>
 
-    <div class="row footer sticky">
-        <button id="generate-btn">Generar</button>
-    </div>
+        <div class="row footer sticky">
+            <button id="generate-btn">Generar</button>
+        </div>
 
-</section>
+    </section>
 
-<main id="main-frame">
+    <main id="main-frame">
 
-    <h2 class="title">Titulo</h2> <!-- To be modified -->
+        <h2 class="title">Titulo</h2> <!-- To be modified -->
 
-    <!-- readonly screen, left justified and filling rest of frame -->
-    <div class="row-right filler" id="preview">
-    </div>
+        <!-- readonly screen, left justified and filling rest of frame -->
+        <div class="row-right filler" id="preview">
+        </div>
 
-    <div class="row-right">
-        <!-- label is added for accessibility. what should be put in it? -->
-        <label for="chat-box"></label>
-        <textarea id="chat-box" placeholder="Ask a question..."></textarea>
-    </div>
+        <div class="row-right">
+            <!-- label is added for accessibility. what should be put in it? -->
+            <label for="chat-box"></label>
+            <textarea id="chat-box" placeholder="Ask a question..."></textarea>
+        </div>
 
-</main>
+    </main>
+</div>
 </body>
 
 </html>
