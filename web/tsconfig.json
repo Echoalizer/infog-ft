@@ -1,0 +1,62 @@
+{
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "compilerOptions": {
+    // File Layout
+    // "rootDir": "./src",
+    "outDir": "dist",
+    // Environment Settings
+    "module": "esnext",
+    // nodenext
+    "target": "esnext",
+    // es6
+    "types": [
+      "node",
+      "vite/client"
+    ],
+    // For nodejs:
+    // "lib": ["esnext"], // ES2023, DOM
+
+    "allowJs": true,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "noEmit": false,
+    "moduleResolution": "bundler",
+    // nodenext
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    /* Linting */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true
+
+    // "allowImportingTsExtensions": true,
+    // "allowArbitraryExtensions": true,
+    // "noEmit": true,
+
+    // Other Outputs
+    // "sourceMap": true,
+    // "declaration": true,
+    // "declarationMap": true,
+
+    // Stricter Typechecking Options
+    // "noUncheckedIndexedAccess": true,
+    // "exactOptionalPropertyTypes": true,
+
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noPropertyAccessFromIndexSignature": true,
+  },
+  "include": [
+    "src",
+    "forge.env.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

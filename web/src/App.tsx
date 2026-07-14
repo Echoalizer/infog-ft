@@ -1,8 +1,5 @@
-import React from "react";
-
-import View from "./view"
-import Controls from "./controls"
-
+import View from "./components/View"
+import Controls from "./components/Controls"
 
 function App() {
     return (

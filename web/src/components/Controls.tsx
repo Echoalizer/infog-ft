@@ -1,20 +1,23 @@
-import React from "react";
-import send from "./utils";
+import send from "../backend";
 
 function Controls() {
     return (
         <div id="left-controls">
+            <h2 className="title">Generación de informes</h2>
+
             <BoxElement name="upload" action="Abrir"></BoxElement>
             <BoxElement name="search" action="Buscar"></BoxElement>
             <BoxElement name="extract" action="Extraer"></BoxElement>
 
             <ResourcesList></ResourcesList>
+
+            <div className="filler"></div>
             <StickyButton></StickyButton>
         </div>
     )
 }
 
-function BoxElement({name, action}) {
+function BoxElement({name, action}: { name: string, action: string }) {
     let box = name + "-box"
     return (
         <div className="row">
@@ -28,7 +31,7 @@ function BoxElement({name, action}) {
 }
 
 
-function ClickableButton({title, message}) {
+function ClickableButton({title, message}: { title: string, message: string }) {
     let btn = title + "-btn"
     return (
         <button id={btn} className="btn" onClick={() => send(message)}>

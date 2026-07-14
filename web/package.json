@@ -1,29 +1,66 @@
 {
   "name": "web",
+  "productName": "web",
   "version": "1.0.0",
-  "description": "React webapp/UI for python app",
-  "type": "module",
-  "main": "main.js",
+  "description": "Electron app with React UI and embedded python server.",
+  "type": "commonjs",
+  "main": ".vite/build/electron.js",
+  "private": true,
   "scripts": {
-    "start": "electron .",
-    "debug": "electron --trace-warnings .",
-    "test": "test"
+    "start": "electron-forge start",
+    "dev": "npm run start",
+    "debug": "electron-forge start --inspect-electron ",
+    "electron": "electron .",
+    "serve": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint --ext .ts,.tsx .",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:echoalizer/infog-ft.git"
   },
-  "author": "Echoalizer",
-  "license": "ISC",
-  "devDependencies": {
-    "electron": "^41.2.2",
-    "react": "^19.2.5",
-    "typescript": "^6.0.3"
+  "keywords": [],
+  "author": {
+    "name": "Echoalizer",
+    "email": "echoalizr@gmail.com"
   },
-  "dependencies": {
+  "license": "All rights reserved.",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.11.2",
+    "@electron-forge/maker-deb": "^7.11.2",
+    "@electron-forge/maker-rpm": "^7.11.2",
+    "@electron-forge/maker-squirrel": "^7.11.2",
+    "@electron-forge/maker-zip": "^7.11.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.11.2",
+    "@electron-forge/plugin-fuses": "^7.11.2",
+    "@electron-forge/plugin-vite": "^7.11.2",
+    "@electron/fuses": "^1.8.0",
+    "@tsconfig/recommended": "^1.0.13",
+    "@types/electron-squirrel-startup": "^1.0.2",
+    "@types/node": "^26.1.1",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "@vitejs/plugin-react": "^6.0.3",
+    "electron": "43.1.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-import": "^2.32.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.4"
+  },
+  "dependencies": {
     "classnames": "^2.5.1",
+    "electron-squirrel-startup": "^1.0.1",
+    "react": "^19.2.7",
     "react-dom": "^19.2.7"
+  },
+  "overrides": {
+    "vite": "$vite"
   }
 }
