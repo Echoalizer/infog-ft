@@ -10,6 +10,7 @@
 
 const send = (message: string) => {
 
+    console.log("received: ", message)
     fetch('/response', {
         method: 'GET',
     })
@@ -18,8 +19,8 @@ const send = (message: string) => {
         // Handling the data obtained from the response
         .then(data => {
             // Update UI with product details from the response
+            console.log(data) // no data because we don't have a server yet
         });
-
 }
 
 export default send

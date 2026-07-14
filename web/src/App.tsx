@@ -3,7 +3,7 @@ import Controls from "./components/Controls"
 
 function App() {
     return (
-        <div>
+        <div className="app-container">
             <Controls></Controls>
             <View></View>
         </div>

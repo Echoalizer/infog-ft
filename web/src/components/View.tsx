@@ -1,7 +1,7 @@
-
 function View() {
     return (
-        <div>
+        <div id="main-frame">
+
             <h2 className="title">Titulo</h2> {/* To be modified */}
 
             {/* readonly screen, left justified and filling rest of frame */}
@@ -15,14 +15,6 @@ function View() {
             </div>
         </div>
 
-    )
-}
-
-function Map() {
-    return (
-        <div>
-
-        </div>
     )
 }
 
