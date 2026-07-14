@@ -1,22 +1,33 @@
 # Architecture
 
-### Electron Forge
+### Electron + Vite + React
 
+This application is built using Electron and Electron Forge, the latter taking care of building and packaging
+as well as plugin integration. The tool used for compiling and integrating the React UI is Vite, which also compiles
+the electron main process that then loads either the entry point for the renderer process (??) or the development
+server.
+
+#### Electron Forge
 - Electron
-- React
 - Vite
+- React
 - Typescript
 
+Aside from the build lifecycle, the tools CI tools added are:
 
-- ESLint
+- ESLint (for typescript code)
 - Prettier
+- editorconfig (? ideally shared among devs of the project, but-?)
 
 ### Python
 
+The main processing of the application is done in Python, which communicates with the front-end through a dedicated API.
+
 - FastAPI
 
+---
 
-- editorconfig
+### Decision-Making
 
 #### Why Electron instead of Tauri?
 
