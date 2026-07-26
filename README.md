@@ -1,23 +1,28 @@
 Final Project
-----
-
+-------------
 
 David Perez
 
+---
 
-##### Technologies used:
-- Python 3.13
+### Installation
+
+```
+npm i
+```
+
+### Startup
+
+The following command starts the runs over node and starts the Electron Forge engine.
+
+```
+npm run start
+```
+
+Electron Forge starts Vite's development server, and create the Electron app pointing to its address.
 
 
-- Electron 41.2
-    - over Node.js v22
-    - [Awesome Electron - resources](https://github.com/sindresorhus/awesome-electron#components)
-- React 19.2*
-- Typescript 6
-
-
-- WebSockets
-
+---
 Context isolation and iPC (Electron)
 https://www.electronjs.org/docs/latest/tutorial/ipc
 
@@ -26,5 +31,6 @@ https://www.npmjs.com/package/classnames#usage-with-reactjs
 
 ##### Code guidelines:
 - [PEP8](https://peps.python.org/pep-0008/)
+- ESLint Typescript recommended
 - [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
 

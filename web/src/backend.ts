@@ -7,20 +7,54 @@
  *     talks to localhost, but the backend remains a clean, testable HTTP service."
  */
 
+// python server root url
+const server: string = "http://localhost:8000"
+const headers = {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': server,
+    'Access-Control-Allow-Credentials': 'true',
+}
 
-const send = (message: string) => {
+
+// send a message (from the chat) to the backend
+export const send = (message: string) => {
 
     console.log("received: ", message)
-    fetch('/response', {
+    let url: string = server + '/search/' + message
+    console.log("sending: ", url)
+    fetch(url, {
         method: 'GET',
+        headers: headers
     })
+        // should we set headers here or back
         // Handling the response by converting it to JSON
         .then(response => response.json())
         // Handling the data obtained from the response
         .then(data => {
             // Update UI with product details from the response
-            console.log(data) // no data because we don't have a server yet
+            console.log(data?.message) // no data because we don't have a server yet
         });
 }
 
-export default send
+// search for information: get info only from AI model
+export const search = (query: string): void => {
+    const url: string = server + '/search/' + query
+    fetch(url, {
+        method: 'GET',
+        headers: headers
+    }).then(response => response.json())
+        .catch(error => console.error('Error:', error))
+}
+
+
+// extract info from an url: summarize it and then save it as a context message
+export function extract(site: string): Promise<void> {
+    const url: string = server + '/extract/' + site
+    return fetch(url, {
+        method: 'GET',
+        headers: headers
+    }).then(response => response.json())
+        .catch(error => console.error('Error:', error))
+}
+
+// upload a resource: plain text file that will be saved as a context messge

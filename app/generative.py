@@ -1,17 +1,16 @@
 from ollama import chat
 
 
-class Generator:
+class Generative:
     def __init__(self):
         self._model = 'gemma3:270m'
         # might need to keep a chat history
 
-    def send(self, message, role='user') -> str:
-        message = "can you please generate an extensive report about" + message
+    def send(self, prompt: str, message: str, role: str = 'user') -> str:
         response = chat(
             model=self._model,
             messages=[
-                {'role': role, 'content': message}
+                {'role': role, 'content': prompt + message}
             ],
         )
         print(response.message.content)

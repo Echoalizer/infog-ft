@@ -23,6 +23,7 @@
     "moduleResolution": "bundler",
     // nodenext
     "resolveJsonModule": true,
+    // Typescript supports new jsx transform as of v4.1
     "jsx": "react-jsx",
     "verbatimModuleSyntax": true,
     "isolatedModules": true,

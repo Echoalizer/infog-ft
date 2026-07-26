@@ -10,7 +10,9 @@ import './index.css';
 import App from "./App";
 
 const root = createRoot(document.getElementById('root')!);
-// this shouldn't work because renderer process does not have node integration. where is react?
+// this shouldn't work because the renderer process does not have node integration. where is react?
+// where is node being called here?? react is injected by vite
+// import react?
 root.render(
     <StrictMode>
         <App/>

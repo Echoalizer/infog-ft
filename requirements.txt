@@ -2,5 +2,7 @@ requests
 ollama
 arcgis
 scikit-learn
-pytorch
+torch
 nltk
+fastapi
+uvicorn
