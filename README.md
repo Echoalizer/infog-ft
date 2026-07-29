@@ -7,19 +7,48 @@ David Perez
 
 ### Installation
 
+Node packages can be installed with:
 ```
-npm i
-```
+# ./web
 
-### Startup
-
-The following command starts the runs over node and starts the Electron Forge engine.
-
-```
-npm run start
+% npm i
 ```
 
-Electron Forge starts Vite's development server, and create the Electron app pointing to its address.
+To use the python server in development mode, we need to create a virtual environment and install the required packages.
+```
+% python -m venv venv
+% source venv/bin/activate
+% pip install -r requirements.txt
+```
+
+The virtual env. can be exited with:
+
+```
+% deactivate
+```
+
+Anytime we need to use the virtual environment, run:
+
+```
+% source venv/bin/activate
+```
+
+### Startup: dev server
+
+Start the python server with:
+
+```
+% fastapi dev
+```
+
+The following command runs over node and starts the Electron Forge engine.
+
+```
+# ./web
+% npm run start
+```
+
+Electron Forge starts Vite's development server, and creates the Electron app pointing to its address.
 
 
 ---
