@@ -11,6 +11,12 @@ David Perez
 npm i
 ```
 
+```
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
 ### Startup
 
 The following command starts the runs over node and starts the Electron Forge engine.
