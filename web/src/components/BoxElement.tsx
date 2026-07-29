@@ -1,6 +1,12 @@
 import ClickableButton from "./ClickableButton";
 
-function BoxElement({name, action, placeholder}: { name: string, action: string, placeholder?: string }) {
+interface BoxElementProps {
+    name: string,
+    action: string,
+    placeholder?: string
+}
+
+function BoxElement({name, action, placeholder}: BoxElementProps) {
     let box: string = name + "-box"
     return (
         <div className="row">
