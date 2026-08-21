@@ -4,15 +4,14 @@
  */
 
 import {StrictMode} from 'react'
-import {createRoot} from "react-dom/client";
+import {createRoot, type Root} from "react-dom/client";
 
-import './index.css';
+// import './index.css';  // this line caused an inline-style warning
 import App from "./App";
 
-const root = createRoot(document.getElementById('root')!);
-// this shouldn't work because the renderer process does not have node integration. where is react?
-// where is node being called here?? react is injected by vite
-// import react?
+const root: Root = createRoot(document.getElementById('root')!);
+// the renderer process does not run over node, but it nonetheless has access to node_modules
+// when we import React, vite loads it into the compiled files
 root.render(
     <StrictMode>
         <App/>

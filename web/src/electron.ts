@@ -1,6 +1,7 @@
-import {app, BrowserWindow} from 'electron';
+import {app, BrowserWindow, dialog, ipcMain} from 'electron';
 import path from 'node:path';
 import started from 'electron-squirrel-startup';
+import {installExtension, REACT_DEVELOPER_TOOLS} from "electron-devtools-installer";
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
@@ -36,7 +37,18 @@ const createWindow = () => {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(
-    createWindow
+    (): void => {
+        ipcMain.on('openFileBrowser', () => {
+            openFileBrowser()
+        })
+
+        // this line causes some deprecation warnings: session.getAllExtensions and session.loadExtension
+        // TODO switch away from electron-devtools-installer
+        installExtension(REACT_DEVELOPER_TOOLS)
+            .then((ext) => console.log(`loaded extension ${ext}`))
+            .catch((err) => console.log(`oh no... ${err}`))
+        createWindow()
+    }
 );
 
 // Quit when all windows are closed, except on macOS. There, it's common
@@ -58,3 +70,16 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
+
+function openFileBrowser() {
+    const files: string[] =
+        dialog.showOpenDialogSync({defaultPath: ".", properties: ['openFile', 'multiSelections']}) ?? []
+
+    for (let file of files) {
+        // send to python
+        console.log(file)
+        // add to front
+    }
+    // shell.openPath(".").then((path) => {console.log(path)});
+
+}

@@ -1,22 +1,40 @@
-import BoxElement from "./BoxElement";
+import ActionForm from "./ActionForm";
 import ResourcesList from "./ResourcesList";
-import StickyButton from "./StickyButton";
+
+import {extract, search} from "../backend";
+
+async function addFile(): Promise<void> {
+    // call electron ipc to open file manager, and await file selection response
+    // add file to
+    console.log("opening file browser to select file")
+    window.ElectronAPI.openFileBrowser()
+}
+
+/*
+function StickyButton() {
+    return (
+        <div className="row footer sticky" hidden={true}>
+            <button id="generate-btn">Generar</button>
+        </div>
+    )
+*/
 
 function Controls() {
     return (
-        <div id="left-controls">
+        <div className="main-section" id="control">
             <h2 className="title">Generación de informes</h2>
 
-            {/* Los nombres de estos botones deberían traducirse */}
-            <BoxElement name="upload" action="Subir un archivo"></BoxElement>
-            <BoxElement name="search" action="Buscar información" placeholder="dogs and cats"></BoxElement>
-            <BoxElement name="extract" action="Extraer de un sitio web" placeholder="https://www.site.com"></BoxElement>
+            <ActionForm action="search" submitCallback={search}></ActionForm>
+            <ActionForm action="extract" submitCallback={extract}></ActionForm>
+            <ActionForm action="upload" submitCallback={addFile}></ActionForm>
 
             <ResourcesList></ResourcesList>
 
+            {/*
             <div className="filler"></div>
-            {/* I don't really like this */}
             <StickyButton></StickyButton>
+            */}
+
         </div>
     )
 }

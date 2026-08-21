@@ -2,9 +2,19 @@
     font-family: 'Avenir', 'Helvetica', 'Verdana', sans-serif;
 }
 
-html, body, #root {
+html {
     height: 100%;
 }
+
+body, #root {
+    /* stretch is only available in safari (macOS/iOS) or webkit on iOS in preview mode as of August 2026 */
+    height: stretch;
+    width: stretch;
+}
+
+/*body {*/
+/*    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;*/
+/*}*/
 
 .app-container {
     display: flex;
@@ -14,11 +24,6 @@ html, body, #root {
     /*background-color: #ddeeff;*/
 }
 
-textarea {
-    resize: none;
-    height: 1.2em;
-}
-
 .text-input {
     margin-top: 0.7em;
     display: flex;
@@ -26,7 +31,7 @@ textarea {
     width: 100%;
 }
 
-.text-input textarea {
+.text-input input, .text-input label {
     flex: 7;
     margin-right: 10px;
 }
@@ -41,6 +46,7 @@ textarea {
 
 .title {
     width: max-content;
+    /*max-height: min-content;*/
 }
 
 .row {
@@ -48,16 +54,12 @@ textarea {
     margin-bottom: 10px;
 }
 
-.row-right {
-    width: 100%;
-}
-
 .btn {
     position: relative;
     right: 0;
 }
 
-#left-controls, #main-frame {
+.main-section {
     display: flex;
     flex-direction: column;
     /*min-height: 100%;*/
@@ -67,7 +69,7 @@ textarea {
     background-color: #eeeeef;
 }
 
-#left-controls {
+#control {
     flex: 1;
     min-width: min-content;
 }
@@ -76,13 +78,18 @@ textarea {
     flex: 3;
 }
 
-#chat-box {
-    margin-top: 12px;
-    width: stretch;
+.chat-box {
+    /*margin-top: 12px;*/
     height: 3em;
+    width: stretch;
+    /*flex: 1;*/
 }
 
 #generate-btn {
+    width: 100%;
+}
+
+#send-btn {
     width: 100%;
 }
 

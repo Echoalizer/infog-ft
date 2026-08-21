@@ -17,13 +17,14 @@ const headers = {
 
 
 // send a message (from the chat) to the backend
-export const send = (message: string) => {
+export async function send(message: string): Promise<void> {
 
     console.log("received: ", message)
-    let url: string = server + '/search/' + message
-    console.log("sending: ", url)
-    fetch(url, {
-        method: 'GET',
+    let url: string = server + '/messages/'
+    console.log("req address: ", url)
+    await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify({message: message}),
         headers: headers
     })
         // should we set headers here or back
@@ -32,14 +33,15 @@ export const send = (message: string) => {
         // Handling the data obtained from the response
         .then(data => {
             // Update UI with product details from the response
-            console.log(data?.message) // no data because we don't have a server yet
-        });
+            console.log(data?.message)
+        }).catch(error => console.error('Error:', error));
+    console.log("sent")
 }
 
 // search for information: get info only from AI model
-export const search = (query: string): void => {
-    const url: string = server + '/search/' + query
-    fetch(url, {
+export async function search(query: string): Promise<void> {
+    const url: string = server + '/search?q=' + query
+    return fetch(url, {
         method: 'GET',
         headers: headers
     }).then(response => response.json())
@@ -48,13 +50,18 @@ export const search = (query: string): void => {
 
 
 // extract info from an url: summarize it and then save it as a context message
-export function extract(site: string): Promise<void> {
-    const url: string = server + '/extract/' + site
-    return fetch(url, {
+export async function extract(url: string): Promise<void> {
+    // perform validations: starts with https:// or http://
+    if (!(url.startsWith('https://') || url.startsWith('http://')))
+        url = 'https://' + url
+    // contains only valid characters
+
+    const requestUrl: string = server + '/extract?url=' + url
+    return fetch(requestUrl, {
         method: 'GET',
         headers: headers
     }).then(response => response.json())
         .catch(error => console.error('Error:', error))
 }
 
-// upload a resource: plain text file that will be saved as a context messge
+// upload a resource: plain text file that will be saved as a context message
