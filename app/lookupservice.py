@@ -1,10 +1,10 @@
 import requests
 
-from generative import Generative
+from generativeservice import GenerativeService
 
 
-class Service:
-    _generative = Generative()  # this is a Class attribute
+class LookupService:
+    _genService = GenerativeService()  # this is a Class attribute
 
     def __init__(self):
         self._resources: dict[str, list[str]] = {
@@ -12,6 +12,9 @@ class Service:
             "texts": [],
             "links": [],
         }
+
+    def send(self, msg) -> str:
+        return self._genService.send("", msg)
 
     def search(self, query):  # returns tuple? of resources
         ret = None
@@ -23,7 +26,7 @@ class Service:
 
             resources = query
 
-            processed = self._generative.send("tell me all you can about ", resources)
+            processed = self._genService.send("tell me all you can about ", resources)
             ret = (processed, resources)  # resources and summary
         return ret
 
@@ -32,7 +35,7 @@ class Service:
         url = verify(url)
         response = requests.get(url)
         resource = response.text
-        self._generative.send("summarise this: ", resource)  # needs prompt. how do messages' interface work?
+        self._genService.send("summarise this: ", resource)  # needs prompt. how do messages' interface work?
         # add to list
         self._resources["links"].append(response.headers["Server"])
         return resource
@@ -47,6 +50,8 @@ class Service:
 
 
 def verify(url: str):
+    # this is checked at js level, maybe some other checks should be done here
+    # perhaps ping? how do the libraries used work?
     if not (url.startswith('https://') or url.startswith('http://')):
         url = 'https://' + url
     return url

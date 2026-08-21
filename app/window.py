@@ -2,9 +2,8 @@ from tkinter import *
 from tkinter import ttk
 from tkinter.filedialog import askopenfilenames
 
-# from tkinter.ttk import *  # available widgets get replaced by newer ones
-
-import service
+# from tkinter.ttk import *
+# with the line above, available widgets get replaced by newer ones
 
 
 class Window:
@@ -29,7 +28,9 @@ class Window:
 
     def open_file(self):
         files = askopenfilenames()
-        self.__serv.summarise(files)
+
+        # the following call does not work. also it is commented on source
+        # self.__serv.summarise(files)
 
     # def terminate(self):
     #     self.root.destroy()

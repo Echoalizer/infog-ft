@@ -1,7 +1,7 @@
 from ollama import chat
 
 
-class Generative:
+class GenerativeService:
     def __init__(self):
         self._model = 'gemma3:270m'
         # might need to keep a chat history
