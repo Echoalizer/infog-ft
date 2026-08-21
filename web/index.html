@@ -6,11 +6,11 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta
             http-equiv="Content-Security-Policy"
-            content="connect-src http://localhost:8000/ 'self'; default-src 'self'; script-src 'self'"
+            content="connect-src http://localhost:8000/ 'self'; default-src 'self'; script-src 'self' styles-src 'self'"
     />
     <meta
             http-equiv="X-Content-Security-Policy"
-            content="default-src 'self'; script-src 'self'"
+            content="default-src 'self'; script-src 'self'; styles-src 'self';"
     />
     <title>App report gen. infog-tg</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
@@ -20,62 +20,62 @@
 
 <body>
 <div id="root">
-    <section id="left-controls">
+    <!--    <section id="controls">-->
 
-        <h2 class="title">Generación de informes</h2>
+    <!--        <h2 class="title">Generación de informes</h2>-->
 
-        <div class="row">
-            <label for="upload-box">Subir un archivo</label>
-            <div class="text-input">
-                <textarea id="upload-box" placeholder="values.csv"></textarea>
-                <button id="upload-btn" class="btn">Abrir</button>
-            </div>
-        </div>
+    <!--        <div class="row">-->
+    <!--            <label for="upload-box">Subir un archivo</label>-->
+    <!--            <div class="text-input">-->
+    <!--                <textarea id="upload-box" placeholder="values.csv"></textarea>-->
+    <!--                <button id="upload-btn" class="btn">Abrir</button>-->
+    <!--            </div>-->
+    <!--        </div>-->
 
-        <div class="row">
-            <label for="search-box">Buscar datos</label>
-            <div class="text-input">
-                <textarea id="search-box" placeholder="dogs and cats"></textarea>
-                <button id="search-btn" class="btn">Buscar</button>
-            </div>
-        </div>
+    <!--        <div class="row">-->
+    <!--            <label for="search-box">Buscar datos</label>-->
+    <!--            <div class="text-input">-->
+    <!--                <textarea id="search-box" placeholder="dogs and cats"></textarea>-->
+    <!--                <button id="search-btn" class="btn">Buscar</button>-->
+    <!--            </div>-->
+    <!--        </div>-->
 
-        <div class="row">
-            <label for="extract-box">Extraer de un sitio web</label>
-            <div class="text-input">
-                <textarea id="extract-box" placeholder="https://www.site.com"></textarea>
-                <button id="extract-btn" class="btn">Extraer</button>
-            </div>
-        </div>
+    <!--        <div class="row">-->
+    <!--            <label for="extract-box">Extraer de un sitio web</label>-->
+    <!--            <div class="text-input">-->
+    <!--                <textarea id="extract-box" placeholder="https://www.site.com"></textarea>-->
+    <!--                <button id="extract-btn" class="btn">Extraer</button>-->
+    <!--            </div>-->
+    <!--        </div>-->
 
-        <div class="row">
-            <list id="resources">
-            </list>
-        </div>
+    <!--        <div class="row">-->
+    <!--            <list id="resources">-->
+    <!--            </list>-->
+    <!--        </div>-->
 
-        <div class="filler"></div>
+    <!--        <div class="filler"></div>-->
 
-        <div class="row footer sticky">
-            <button id="generate-btn">Generar</button>
-        </div>
+    <!--        <div class="row footer sticky">-->
+    <!--            <button id="generate-btn">Generar</button>-->
+    <!--        </div>-->
 
-    </section>
+    <!--    </section>-->
 
-    <main id="main-frame">
+    <!--    <main id="main-frame">-->
 
-        <h2 class="title">Titulo</h2> <!-- To be modified -->
+    <!--        <h2 class="title">Titulo</h2> &lt;!&ndash; To be modified &ndash;&gt;-->
 
-        <!-- readonly screen, left justified and filling rest of frame -->
-        <div class="row-right filler" id="preview">
-        </div>
+    <!--        &lt;!&ndash; readonly screen, left justified and filling rest of frame &ndash;&gt;-->
+    <!--        <div class="row-right filler" id="preview">-->
+    <!--        </div>-->
 
-        <div class="row-right">
-            <!-- label is added for accessibility. what should be put in it? -->
-            <label for="chat-box"></label>
-            <textarea id="chat-box" placeholder="Ask a question..."></textarea>
-        </div>
+    <!--        <div class="row-right">-->
+    <!--            &lt;!&ndash; label is added for accessibility. what should be put in it? &ndash;&gt;-->
+    <!--            <label for="chat-box"></label>-->
+    <!--            <textarea id="chat-box" placeholder="Ask a question..."></textarea>-->
+    <!--        </div>-->
 
-    </main>
+    <!--    </main>-->
 </div>
 
 <script type="module" src="src/renderer.tsx"></script>
